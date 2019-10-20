@@ -31,10 +31,13 @@ Real Time Happening						Filter Result
 - Receiver Circuitဘက်ကတော့ တစ်ဖက်က Circuitပိတ်ထားရင် ပိတ်ထားကြောင်း အသံပေးပါမယ်။ Sensor Errorတက်ရင်လည်း အသံပေးပါမယ်။ ရေတင်ခလုတ်ကို အဖွင့်အပိတ်လုပ်မယ်။ LCDကနေ စာနဲ့ "ရေတင်နေကြောင်း" "တိုင်ကီထဲမှာ ရေဘယ်လောက်ကျန်ကြောင်း" အသိပေးပါမယ်။ ဒါပါပဲ။
 
 ###### 433Mhz Transceiver
-- (Video) https://www.youtube.com/watch?v=txSrx5druXg
-- (Code - already included in an IDE) Examples/RadioHead/ask/ask_transmitter
-- (Code - already included in an IDE) Examples/RadioHead/ask/ask_receiver
-- (Libruary) http://www.airspayce.com/mikem/arduino/RadioHead/index.html
+- (Video) 
+   - https://www.youtube.com/watch?v=txSrx5druXg
+- (Code - already included in an IDE) 
+   - Examples/RadioHead/ask/ask_transmitter
+   - Examples/RadioHead/ask/ask_receiver
+- (Libruary) 
+   - http://www.airspayce.com/mikem/arduino/RadioHead/index.html
 
 ###### I2C Adaptor
 - (Video) https://www.youtube.com/watch?v=wEbGhYjn4QI&t=1746s
