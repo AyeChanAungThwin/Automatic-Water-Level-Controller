@@ -28,7 +28,7 @@ Real Time Happening						Filter Result
 010								011
 ```
 - At the text filtration method, I forced the receiver circuit to switch off when all sensor is getting HIGH regardless of the filter. This is required, too. This isn't about only about C program anymore. This is also about hardware. We're giving 3 analog signals to A0, A1 and A2 from a 5V pin and they will not be ***LOW*** unless grounded with 2k resistors to each analog pins. That's why when the sensor is ***CLOSED***, not only it gives 5 volts to analog pins but also goes into grounds. The lost in voltage changes both HIGH and LOW while filtration 10 times and never match the same text 10 times and never stop filling water. Trust me, that has happened to it. If you use (3x) 5k resistors, it won't be necessary. Just use 5k if you have it. Even if you use 5k, you don't need to change the code. Don't remove that code because it will make sure the switch to turn off.
-- At the receiver Circuit, it will give you an alarm when the transmitter is off, sensor failure, open or close the switch and its LCD will show you the situation happening inside water tank.
+- At the receiver Circuit, it will give you an alarm when the transmitter is off, sensor failure, open or close the switch and its LCD will show us the situation happening inside water tank.
 
 ###### 433Mhz Transceiver
 - **(Video)** *13 mins*
