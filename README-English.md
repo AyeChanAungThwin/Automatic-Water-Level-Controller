@@ -9,7 +9,7 @@
 - This kind of filtration is required because the sensor is neither getting HIGH nor LOW. We have to make sure it is HIGH or LOW.
 <pre>
 Real Time Happening						Filter Result
-111										111
+111								111
 011								111
 111								111
 011								111
