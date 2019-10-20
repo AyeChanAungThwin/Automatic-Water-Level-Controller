@@ -272,6 +272,7 @@ void lightUp(String rcv) {
        digitalWrite(driveRelay, HIGH);
     }
     else {
+      delay(5000);
       digitalWrite(driveRelay, LOW);
     }
 }
