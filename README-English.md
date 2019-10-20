@@ -31,8 +31,8 @@ Real Time Happening						Filter Result
 - At the receiver Circuit, it will give you an alarm when the transmitter is off, sensor failure, open or close the switch and its LCD will show you the situation happening inside water tank.
 
 ###### 433Mhz Transceiver
-- **(Video)** 
-   - *13 mins* [Setting up wireless RF (433Mhz) Transceiver Module](https://www.youtube.com/watch?v=txSrx5druXg)
+- **(Video)** *13 mins*
+   - [Setting up wireless RF (433Mhz) Transceiver Module](https://www.youtube.com/watch?v=txSrx5druXg)
 - **(Code - already included in an IDE)** 
    - Examples/RadioHead/ask/ask_transmitter
    - Examples/RadioHead/ask/ask_receiver
@@ -40,14 +40,14 @@ Real Time Happening						Filter Result
    - [RadioHead Libruary](http://www.airspayce.com/mikem/arduino/RadioHead/index.html)
 
 ###### I2C Adaptor
-- **(Video)**
-   - *46mins* [LCD Displays with Arduino](https://www.youtube.com/watch?v=wEbGhYjn4QI&t=1746s)
+- **(Video)** *46mins*
+   - [LCD Displays with Arduino](https://www.youtube.com/watch?v=wEbGhYjn4QI&t=1746s)
 - **(Code)**
    - [I2C Address Scanner](https://playground.arduino.cc/Main/I2cScanner/)
 
 ###### 16x2 LCD Display
-- **(Video)**
-   - *13mins* [LCD1602 with I2C module](https://www.youtube.com/watch?v=q9YC_GVHy5A)
+- **(Video)** *13mins* 
+   - [LCD1602 with I2C module](https://www.youtube.com/watch?v=q9YC_GVHy5A)
 - **(Code - Scrolling text in one line)**
    - [Marquee text in LCD display](https://forum.arduino.cc/index.php?topic=422542.0)
 - **(Libruary)**
