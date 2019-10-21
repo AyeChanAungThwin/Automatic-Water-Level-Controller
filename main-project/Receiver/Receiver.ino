@@ -294,7 +294,4 @@ void showLCD(String first, String second, int cur1, int cur2) {
     lcd.backlight();
     delay(250);
   }
-  if (first=="Filling water:") {
-    
-  }
 }
