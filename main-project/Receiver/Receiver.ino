@@ -115,6 +115,10 @@ void loop() {
     passCount++;
     delay(300);
   }
+  else {
+    //is wrong data receiving?
+    passCount=0;
+  }
 
   if (passCount==10) {
     passCount=0;
