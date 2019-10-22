@@ -104,7 +104,7 @@ void loop() {
   String rcv="ACAT";
   if (driver.recv(buf, &buflen)) {
     isPowerOff=false;
-    resetTransmission();
+    passCount=0;
     for (int i=0; i<buflen; i++) {
       rcv += (char) buf[i];
     }
@@ -115,18 +115,11 @@ void loop() {
     passCount++;
     delay(300);
   }
-  else {
-    resetTransmission();
-  }
 
-  if (passCount==5) {
-    resetTransmission();
+  if (passCount==10) {
+    passCount=0;
     lightUp("powerOff");
   }
-}
-
-void resetTransmission() {
-  passCount=0;
 }
 
 void errorSound() {
@@ -237,7 +230,8 @@ void lightUp(String rcv) {
       //digitalWrite(sensorFailure, HIGH); //OFF
     }
     else if (rcv=="ACATstopRed") {
-      showLCD("Water tank is..", "almost empty", 1, 2);
+      //showLCD("Water tank is..", "almost empty", 1, 2);
+      showLCD("Half water is", "left in tank", 1, 2);
       resetAllLeds();
       digitalWrite(red, HIGH);
     }
@@ -247,23 +241,26 @@ void lightUp(String rcv) {
       digitalWrite(green, HIGH);
     }
     else if (rcv=="ACATstopBlue") {
-      showLCD("Half water is", "left in tank", 1, 2);
+      //showLCD("Half water is", "left in tank", 1, 2);
+      showLCD("Full water", "in tank!", 3, 4);
       resetAllLeds();
       digitalWrite(blue, HIGH);
     }
     
     else if (rcv=="ACATstartBlinkRed") {
-      showLCD("Filling water:", "Approaching 1/3", 1, 0);
+      //showLCD("Filling water:", "Approaching 1/3", 1, 0);
+      showLCD("Filling water:", "Approaching 1/2", 1, 2);
       fillWater = true;
       blink(red);
     }
     else if (rcv=="ACATstartBlinkGreen") {
-      showLCD("Filling water:", "Approaching 3/3", 1, 0);
+      //showLCD("Filling water:", "Approaching 3/3", 1, 0);
+      showLCD("Filling water:", "Approaching 2/2", 1, 0);
       fillWater = true;
       blink(green);
     }
     else if (rcv=="ACATstartBlinkBlue") {
-      showLCD("Filling water:", "Approaching 2/3", 1, 0);
+      showLCD("Filling water:", "Approaching 1/2", 1, 0);
       fillWater = true;
       blink(blue);
     }
