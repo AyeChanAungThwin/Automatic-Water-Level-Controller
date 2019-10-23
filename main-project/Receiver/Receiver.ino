@@ -253,7 +253,7 @@ void lightUp(String rcv) {
     
     else if (rcv=="ACATstartBlinkRed") {
       //showLCD("Filling water:", "Approaching 1/3", 1, 0);
-      showLCD("Filling water:", "Approaching 1/2", 1, 2);
+      showLCD("Filling water:", "Approaching 1/2", 1, 0);
       fillWater = true;
       blink(red);
     }
