@@ -290,6 +290,7 @@ void showLCD(String first, String second, int cur1, int cur2) {
     lcd.print(second);
   }
   if (first=="Sensor Failure"||first=="Transmitter is") {
+    passCount=0;
     lcd.noBacklight();
     delay(250);
     lcd.backlight();
