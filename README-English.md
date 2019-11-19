@@ -50,7 +50,7 @@ Real Time Happening		Filter Result
 ###### **(Code)** ######
 - [I2C Address Scanner](https://playground.arduino.cc/Main/I2cScanner/)
 
-## 16x2 LCD Display
+## <h1 style="color:red">16x2 LCD Display</h1>
 ###### **(Video)** *13mins* ######
 - [LCD1602 with I2C module](https://www.youtube.com/watch?v=q9YC_GVHy5A)
 ###### **(Code - Scrolling text in one line)** ######
