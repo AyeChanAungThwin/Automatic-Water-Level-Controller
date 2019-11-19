@@ -3,12 +3,11 @@
 > This is an arduino project.
 > This is useful when your switch and water tank is too far away to connect cable.
 > If following links are failed, you can find it all(Video is not included.) in folder named "Required-Libruaries-And-Project."
-> If you have any POSITIVE suggestion on this code, please let me know. I'll be glad to hear that.
 
 ## Circuit Diagrams
-> Transmitter Part
+- Transmitter Part
 <img src="main-project/circuit-diagram/transmitter.png" alt="Showing Hello world successfully!"> 
-> Receiver Part
+- Receiver Part
 <img src="main-project/circuit-diagram/receiver.png" alt="Showing Hello world successfully!">
 
 ## Explanation
@@ -58,3 +57,6 @@ Real Time Happening		Filter Result
 - [Marquee text in LCD display](https://forum.arduino.cc/index.php?topic=422542.0)
 ###### **(Libruary)** ######
 - [LiquidCrystal-I2C-Libruary](https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library)
+
+## Electronics Engineer-cum-J2EE Backend Developer ##
+-  Created by - Aye Chan Aung Thwin
