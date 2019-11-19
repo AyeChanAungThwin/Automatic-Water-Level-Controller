@@ -1,9 +1,15 @@
 # Automatic-Water-Tank-Controller
-## Details
+## Abstract
 > This is an arduino project.
 > This is useful when your switch and water tank is too far away to connect cable.
 > If following links are failed, you can find it all(Video is not included.) in folder named "Required-Libruaries-And-Project."
 > If you have any POSITIVE suggestion on this code, please let me know. I'll be glad to hear that.
+
+## Circuit Diagrams
+> Transmitter Part
+<img src="main-project/circuit-diagram/transmitter.png" alt="Showing Hello world successfully!"> 
+> Receiver Part
+<img src="main-project/circuit-diagram/receiver.png" alt="Showing Hello world successfully!">
 
 ## Explanation
 - To transmit a text to the receiver circuit, the transmitter circuit will check whether different text is generating according to sensor. If the same text is receiving for 10 times, it changes the text that is happening for 10 times and make the same loop again and again. 
