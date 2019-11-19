@@ -6,9 +6,9 @@
 
 ## Circuit Diagrams
 - Signalထုတ်လွှင့်အပိုင်း
-<img src="main-project/circuit-diagram/transmitter.png" alt="Showing Hello world successfully!"> 
+<img src="main-project/circuit-diagram/transmitter.png" alt="Circuit diagram showing transmission part!"> 
 - Signalလက်ခံသည့်အပိုင်း
-<img src="main-project/circuit-diagram/receiver.png" alt="Showing Hello world successfully!">
+<img src="main-project/circuit-diagram/receiver.png" alt="Circuit diagram showing receiving part!">
 
 ###### Explanation
 - Transmitter Circuitက transmitလုပ်ဖို့အတွက် Sensorကနေထုတ်ထားတဲ့ textတစ်ခုချိန်းတာနဲ့ အဲ့ဒီချိန်းသွားတဲ့ textက 10ကြိမ်တိတိ တူရဲ့လားဆိုတာစစ်ပြီး 10ကြိမ်တိတိတူတယ်ဆိုမှသာ ပြောင်းပေးတာပါ။

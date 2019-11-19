@@ -6,9 +6,9 @@
 
 ## Circuit Diagrams
 - Transmitter Part
-<img src="main-project/circuit-diagram/transmitter.png" alt="Showing Hello world successfully!"> 
+<img src="main-project/circuit-diagram/transmitter.png" alt="Circuit diagram showing transmission part!"> 
 - Receiver Part
-<img src="main-project/circuit-diagram/receiver.png" alt="Showing Hello world successfully!">
+<img src="main-project/circuit-diagram/receiver.png" alt="Circuit diagram showing receiving part!">
 
 ## Explanation
 - To transmit a text to the receiver circuit, the transmitter circuit will check whether different text is generating according to sensor. If the same text is receiving for 10 times, it changes the text that is happening for 10 times and make the same loop again and again. 
