@@ -58,26 +58,12 @@ void initLCD() {
   lcd.print("Controller");
   delay(3000);
   lcd.clear();
-  
-  lcd.setCursor(3, 0);
-  lcd.print("Developed");
-  lcd.setCursor(5, 1);
-  lcd.print("By -");
-  delay(2000);
-  lcd.clear();
-
-  lcd.setCursor(2, 0);
-  lcd.print("Mr. Aye Chan");
-  lcd.setCursor(3, 1);
-  lcd.print("Aung Thwin");
-  delay(2000);
-  lcd.clear();
 
   lcd.setCursor(0, 0);
-  lcd.print("ayechanaungthwin");
-  lcd.setCursor(3, 1);
-  lcd.print("@gmail.com");
-  delay(2000);
+  lcd.print("DATE OF CREATION");
+  lcd.setCursor(0, 1);
+  lcd.print("   19/11/2019   ");
+  delay(3000);
   lcd.clear();
 
   for (int i=3; i>0; i--) {
@@ -90,6 +76,38 @@ void initLCD() {
 
   //Show Scan
   showLCD("Scanning:", "Incoming signals", 4, 0);
+}
+
+int count=0;
+String repeatWord="begin";
+String firstWord="begin";
+String secondWord="begin";
+  
+String filter(String word, int frequency) {
+  if (repeatWord=="begin") {
+    repeatWord=word;
+  }
+  if (firstWord=="begin") {
+    firstWord=word;
+    return repeatWord;
+  }
+  else {
+    secondWord = word;
+  }
+    
+  if (firstWord==secondWord) {
+    count++;
+    if (count==frequency) {
+      count=0;
+      repeatWord=secondWord;
+    }
+    return repeatWord;
+  }
+  else {
+    count=0;
+    firstWord=secondWord;
+    return repeatWord;
+  }
 }
 
 int passCount = 0;
@@ -108,10 +126,12 @@ void loop() {
     for (int i=0; i<buflen; i++) {
       rcv += (char) buf[i];
     }
+    //Serial.println(rcv);
+    rcv=filter(rcv, 2); //filter 2 changes
     lightUp(rcv);
   }
 
-  if (rcv=="ACAT"&&isPowerOff) {
+  if (isPowerOff) {
     passCount++;
     delay(300);
   }
@@ -121,7 +141,7 @@ void loop() {
   }
 
   if (passCount==10) {
-    passCount=0;
+    passCount=0; //Wait 5 secs
     lightUp("powerOff");
   }
 }
@@ -178,44 +198,11 @@ void errorBlink(int loc) {
   delay(blinkDelayTime/2/3);
 }
 
-int count=0;
-String repeatWord="begin";
-String firstWord="begin";
-String secondWord="begin";
-  
-String filter(String word, int frequency) {
-  if (repeatWord=="begin") {
-    repeatWord=word;
-  }
-  if (firstWord=="begin") {
-    firstWord=word;
-    return repeatWord;
-  }
-  else {
-    secondWord = word;
-  }
-    
-  if (firstWord==secondWord) {
-    count++;
-    if (count==frequency) {
-      count=0;
-      repeatWord=secondWord;
-    }
-    return repeatWord;
-  }
-  else {
-    count=0;
-    firstWord=secondWord;
-    return repeatWord;
-  }
-}
+boolean alternate = false;
 
 void lightUp(String rcv) {
+  alternate = !alternate;
     boolean fillWater = false;
-    Serial.print(rcv);
-    //rcv = filter(rcv, 2); //filter 2 changes
-    //Serial.println(rcv);
-    
     if (rcv=="powerOff") {
       showLCD("Transmitter is", "switched off", 1, 2);
       melodySound();
@@ -278,22 +265,65 @@ void lightUp(String rcv) {
     }
 }
 
-String storeLastShownInLCD = "begin";
+String isSame = "begin";
+
 
 void showLCD(String first, String second, int cur1, int cur2) {
-  if (second!=storeLastShownInLCD) {
-    storeLastShownInLCD=second;
-    lcd.clear();
-    lcd.setCursor(cur1, 0);
-    lcd.print(first);
-    lcd.setCursor(cur2, 1);
-    lcd.print(second);
+  //Serial.println(alternate);
+  if (!alternate) {
+    showSourceCode(10); //Load again after 10 times of showing status
   }
-  if (first=="Sensor Failure"||first=="Transmitter is") {
-    passCount=0;
-    lcd.noBacklight();
-    delay(250);
-    lcd.backlight();
+  else {
+    if (first=="Sensor Failure"||first=="Transmitter is") {
+      passCount=0;
+      lcd.noBacklight();
+      delay(250);
+      lcd.backlight();
+      delay(250);
+    }
+    else {
+        if (!second.equals(isSame)) {
+          isSame = second;
+          //Serial.println(first);
+          lcd.clear();
+          lcd.setCursor(cur1, 0);
+          lcd.print(first);
+          lcd.setCursor(cur2, 1);
+          lcd.print(second);
+        }
+    }
+  }
+}
+
+int Li=16;
+int Lii=0;
+
+void marqueeLeft(String display) {
+  lcd.clear();
+  while(Li<=display.length()) {
+    String result = display.substring(Li, Lii);
+    //Serial.println(result);
+    lcd.setCursor(0, 0);
+    lcd.print("  Source Code!  ");
+    lcd.setCursor(0, 1);
+    lcd.print(result);
+    Li++;
+    Lii++;
     delay(250);
   }
+  Li=16;
+  Lii=0;
+  isSame = "begin";
+}
+
+
+int show=0;
+
+void showSourceCode(int value) {
+  if (show>=value) {
+    show=0;
+    String message = "                https://github.com/AyeChanAungThwin/Automatic-Water-Level-Controller  (Clone Now!)  ";
+    marqueeLeft(message);
+  }
+  show++;
 }
