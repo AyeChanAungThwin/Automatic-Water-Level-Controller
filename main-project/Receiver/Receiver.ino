@@ -127,7 +127,7 @@ void loop() {
       rcv += (char) buf[i];
     }
     //Serial.println(rcv);
-    rcv=filter(rcv, 2); //filter 2 changes
+    rcv=filter(rcv, 4); //filter 4 changes
     lightUp(rcv);
   }
 
@@ -298,8 +298,9 @@ void showLCD(String first, String second, int cur1, int cur2) {
 int Li=16;
 int Lii=0;
 
-void marqueeLeft(String display) {
+void marqueeLeft() {
   lcd.clear();
+  String display = "                https://github.com/AyeChanAungThwin/Automatic-Water-Level-Controller  (Clone Now!)  ";
   while(Li<=display.length()) {
     String result = display.substring(Li, Lii);
     //Serial.println(result);
@@ -322,8 +323,7 @@ int show=0;
 void showSourceCode(int value) {
   if (show>=value) {
     show=0;
-    String message = "                https://github.com/AyeChanAungThwin/Automatic-Water-Level-Controller  (Clone Now!)  ";
-    marqueeLeft(message);
+    marqueeLeft();
   }
   show++;
 }
